@@ -1,0 +1,43 @@
+[options]
+font = tewi 9
+
+[colors]
+
+# special
+foreground      = #ffffff
+foreground_bold = #ffffff
+cursor          = #ffffff
+background      = #1d1f21
+
+# black
+color0  = #2b2e33
+color8  = #65737e
+
+# red
+color1  = #fa3e86
+color9  = #fa3e86
+
+# green
+color2  = #b5e366
+color10 = #b5e366
+
+# yellow
+color3  = #f5b866
+color11 = #f5b866
+
+# blue
+color4  = #3db3f2
+color12 = #3db3f2
+
+# magenta
+color5  = #936ae6
+color13 = #936ae6
+
+# cyan
+color6  = #55e6e6
+color14 = #55e6e6
+
+# white
+color7  = #fefefc
+color15 = #fefefc
+

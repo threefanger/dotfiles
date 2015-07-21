@@ -1,0 +1,25 @@
+#! /bin/sh
+#1880x40+20+20
+#-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1
+#-lucy-tewi-medium-r-normal--11-90-75-75-m-60-iso10646-1
+
+if [ $(pgrep -cx panel) -gt 1 ] ; then
+	printf "%s\n" "The panel is already running." >&2
+	exit 1
+fi
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+bspc control --subscribe > "$PANEL_FIFO" &
+xtitle -sf 'T%s' > "$PANEL_FIFO" &
+clock -sf 'S %I:%M %p' > "$PANEL_FIFO" &
+echo 's  ' > "$PANEL_FIFO" &
+
+. panel_colors
+
+cat "$PANEL_FIFO" | panel_bar | lemonbar -g 1880x40+20+20 -f "-misc-fixed-medium-r-semicondensed--12-110-75-75-c-60-*-*" -f "-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
+
+wait
