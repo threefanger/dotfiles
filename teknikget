@@ -1,3 +1,12 @@
 #!/bin/bash
 
-wget https://u.teknik.io/$1
+if [[ $1 = "" ]]
+	then
+		echo -e "\nwget from u.teknik.io/<id>.\nUsage: teknikget <id>\n"
+		exit
+	else
+		wget https://u.teknik.io/$1
+
+fi
+
+#wget https://u.teknik.io/$1
