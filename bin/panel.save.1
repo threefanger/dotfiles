@@ -15,12 +15,11 @@ mkfifo "$PANEL_FIFO"
 
 bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
-clock -sf 'S %I:%M %p' > "$PANEL_FIFO" &
+clock -sf 'S2 %I:%M %p' > "$PANEL_FIFO" &
 echo 's  ' > "$PANEL_FIFO" &
-echo A$(xbacklight | awk 'BEGIN {FS="."}{print $1}') > "$PANEL_FIFO" &	
 
 . panel_colors
 
-cat "$PANEL_FIFO" | panel_bar | lemonbar -g 1880x40+20+20 -f "" -f "" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
+cat "$PANEL_FIFO" | panel_bar | lemonbar -g 1880x40+20+20 -f "-misc-fixed-medium-r-semicondensed--12-110-75-75-c-60-*-*" -f "-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
 
 wait

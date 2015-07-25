@@ -1,0 +1,11 @@
+#!/bin/bash
+
+BAT_LEVEL=$(acpi | awk '{print $4}' | sed 's/,//')
+BAT_STAT=$(acpi | awk '{print $3}' | sed 's/,//')
+
+if [ $BAT_STAT=Full ]
+	then
+	echo 
+fi                                 
+
+echo $BAT_LEVEL, $BAT_STAT
