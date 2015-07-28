@@ -21,6 +21,6 @@ echo A$(xbacklight | awk 'BEGIN {FS="."}{print $1}') > "$PANEL_FIFO" &
 
 . panel_colors
 
-cat "$PANEL_FIFO" | panel_bar | lemonbar -g 1880x40+20+20 -f "" -f "" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
+cat "$PANEL_FIFO" | panel_bar | lemonbar -g 1880x30+20+20 -f "" -f "" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
 
 wait

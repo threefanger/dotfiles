@@ -19,22 +19,22 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a google-chrome-unstable border_width=0
 
-pkill compton
-pkill panel
-pkill feh
-pkill mpd
-pkill syndaemon
-
-mpd &
-
-panel &
-
-/home/anon/.fehbg
-
-compton &
-
-syndaemon -i 0.5 -d
-
-xset +fp /usr/share/fonts/local
-xset +fp /home/anon/.lokaltog-fonts/
-xset fp rehash
+#pkill compton
+#pkill panel
+#pkill feh
+#pkill mpd
+#pkill syndaemon
+#
+#mpd &
+#
+#panel &
+#
+#/home/anon/.fehbg
+#
+#compton &
+#
+#syndaemon -i 0.5 -d
+#
+#xset +fp /usr/share/fonts/local
+#xset +fp /home/anon/.lokaltog-fonts/
+#xset fp rehash
