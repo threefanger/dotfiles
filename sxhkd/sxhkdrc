@@ -102,10 +102,10 @@ XF86Search
 	dmenu_run
 
 XF86AudioRaiseVolume
-	exec amixer -q set Master 3276.8+ unmute
+	exec amixer -q set Master 3276.75+ unmute
 
 XF86AudioLowerVolume
-	exec amixer -q set Master 3276.8- unmute
+	exec amixer -q set Master 3276.75- unmute
 
 XF86AudioMute
 	exec amixer -q set Master toggle
