@@ -4,11 +4,11 @@
 
 # make sxhkd reload its configuration files:
 super + Escape
-        pkill -USR1 -x sxhkd
+        pkill -USR1 -x sxhkd && notify-send SXHKD "Configuration reloaded."
 
 # reload bspwm
 super + r
-        /home/anon/.config/bspwm/bspwmrc
+        /home/anon/.config/bspwm/bspwmrc && notify-send BSPWM "Configuration reloaded."
 
 # lock screen
 super + shift + l
@@ -96,16 +96,16 @@ super + Return
 	termite
 
 super + space
-	dmenu_run
+	dbus-launch dmenu_run
 
 XF86Search
 	dmenu_run
 
 XF86AudioRaiseVolume
-	exec amixer -q set Master 3276.75+ unmute
+	exec amixer -q set Master 3276.8+ unmute
 
 XF86AudioLowerVolume
-	exec amixer -q set Master 3276.75- unmute
+	exec amixer -q set Master 3276.8- unmute
 
 XF86AudioMute
 	exec amixer -q set Master toggle
@@ -125,3 +125,5 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
 	exec xbacklight -dec 10 # decrease screen brightness
 
+@F7
+	skippy-xd
