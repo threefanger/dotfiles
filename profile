@@ -6,9 +6,8 @@ umask 022
 # Set our default path
 PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/home/anon/bin"
 export PATH
-
-# Set fifo path
 export PANEL_FIFO="/tmp/panel-fifo"
+export VISUAL="vim"
 
 # Load profiles from /etc/profile.d
 if test -d /etc/profile.d/; then

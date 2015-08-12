@@ -96,7 +96,7 @@ super + Return
 	termite
 
 super + space
-	dbus-launch dmenu_run
+	dbus-launch synapse 
 
 XF86Search
 	dmenu_run
