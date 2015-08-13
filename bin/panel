@@ -3,6 +3,13 @@
 #-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1
 #-lucy-tewi-medium-r-normal--11-90-75-75-m-60-iso10646-1
 
+PANEL_HEIGHT=30
+PANEL_FONT_FAMILY="Cantarell:size=12"
+#PANEL_FONT_FAMILY="Cantarell:size=9"
+#PANEL_FONT_FAMILY="Cantarell:size=9"
+ICON_FONT="Material Icons:size=15"
+ICON_FONT2="FontAwesome:size=15"
+
 if [ $(pgrep -cx panel) -gt 1 ] ; then
 	printf "%s\n" "The panel is already running." >&2
 	exit 1
@@ -17,10 +24,10 @@ bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
 clock -sf 'S %I:%M %p' > "$PANEL_FIFO" &
 echo 's  ' > "$PANEL_FIFO" &
-echo A$(xbacklight | awk 'BEGIN {FS="."}{print $1}') > "$PANEL_FIFO" &	
+bright.sh > "$PANEL_FIFO" &	
 
 . panel_colors
 
-cat "$PANEL_FIFO" | panel_bar | lemonbar -g 1880x30+20+20 -f "" -f "" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
+cat "$PANEL_FIFO" | panel_bar | lemonbar -g 1880x30+20+20 -f "$PANEL_FONT_FAMILY" -f "$ICON_FONT" -f "$ICON_FONT2" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
 
 wait
