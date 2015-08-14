@@ -5,8 +5,6 @@
 
 PANEL_HEIGHT=30
 PANEL_FONT_FAMILY="Cantarell:size=12"
-#PANEL_FONT_FAMILY="Cantarell:size=9"
-#PANEL_FONT_FAMILY="Cantarell:size=9"
 ICON_FONT="Material Icons:size=15"
 ICON_FONT2="FontAwesome:size=15"
 
@@ -22,7 +20,7 @@ mkfifo "$PANEL_FIFO"
 
 bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
-clock -sf 'S %I:%M %p' > "$PANEL_FIFO" &
+clock.sh > "$PANEL_FIFO" &
 echo 's  ' > "$PANEL_FIFO" &
 bright.sh > "$PANEL_FIFO" &	
 

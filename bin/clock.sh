@@ -1,4 +1,10 @@
 #! /bin/bash
 #muh amazign clock script
 
-clock -si 1 -f "%H:%m:%S"
+
+while true;
+do
+	TIME=$(clock -f "%H:%m:%S")
+	echo S $TIME
+	sleep 1
+done
