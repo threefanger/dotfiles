@@ -31,6 +31,6 @@ do
 			ICON=''
 			LEVEL='N/A'
 	fi
-	echo $ICON $LEVEL
+	echo v$ICON $LEVEL
 	sleep 1
 done
