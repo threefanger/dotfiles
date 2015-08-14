@@ -24,6 +24,7 @@ clock.sh > "$PANEL_FIFO" &
 echo 's  ' > "$PANEL_FIFO" &
 bright.sh > "$PANEL_FIFO" &	
 sound.sh > "$PANEL_FIFO" &
+wifi.sh > "$PANEL_FIFO" &
 
 . panel_colors
 
