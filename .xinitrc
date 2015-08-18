@@ -3,8 +3,10 @@
 /home/anon/.fehbg &
 xsetroot -cursor_name left_ptr &
 compton &
-panel &
+exec pulseaudio --start &
+panel | bash &
 exec synapse -s &
 sxhkd -f 100 &
-exec bspwm 
+exec dbus-launch bspwm 
+exec pulseaudio --kill
 exec kill -9 -1
