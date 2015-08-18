@@ -5,8 +5,9 @@
 
 PANEL_HEIGHT=30
 PANEL_FONT_FAMILY="Cantarell:size=12"
-ICON_FONT="Material Icons:size=15"
-ICON_FONT2="FontAwesome:size=15"
+ICON_FONT="font\-linux:size=15"
+ICON_FONT2="Material Icons:size=15"
+ICON_FONT3="FontAwesome:size=15"
 
 if [ $(pgrep -cx panel) -gt 1 ] ; then
 	printf "%s\n" "The panel is already running." >&2
@@ -25,9 +26,10 @@ echo 's  ' > "$PANEL_FIFO" &
 bright.sh > "$PANEL_FIFO" &	
 sound.sh > "$PANEL_FIFO" &
 wifi.sh > "$PANEL_FIFO" &
+settings.sh > "$PANEL_FIFO" &
 
 . panel_colors
 
-cat "$PANEL_FIFO" | panel_bar | lemonbar -g 1880x30+20+20 -f "$PANEL_FONT_FAMILY" -f "$ICON_FONT" -f "$ICON_FONT2" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
+cat "$PANEL_FIFO" | panel_bar | lemonbar -g 1880x30+20+20 -f "$PANEL_FONT_FAMILY" -f "$ICON_FONT" -f "$ICON_FONT2" -f "$ICON_FONT3" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" | bash &
 
 wait

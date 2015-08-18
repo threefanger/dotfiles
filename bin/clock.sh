@@ -4,7 +4,7 @@
 
 while true;
 do
-	TIME=$(clock -f "%H:%m:%S")
+	TIME=$(date | awk '{print $4}')
 	echo S $TIME
 	sleep 1
 done

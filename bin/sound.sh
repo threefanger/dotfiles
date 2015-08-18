@@ -1,8 +1,5 @@
 #! /bin/bash
-# muh voluum scriprt
-#
-# this script shows volume with a dynamic icon
-#
+#muh voluum scriprt
 ICON=""
 
 while true;

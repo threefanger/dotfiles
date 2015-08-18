@@ -45,6 +45,6 @@ do
                 ICON=''
 
 	fi
-	echo w$ICON $NETWORK $SIGQUAL
+	echo w%{c}$ICON $NETWORK $SIGQUAL
 	sleep 1
 done
